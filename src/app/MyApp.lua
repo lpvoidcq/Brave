@@ -11,6 +11,10 @@ end
 
 function MyApp:run()
     cc.FileUtils:getInstance():addSearchPath("res/")
+    cc.FileUtils:getInstance():addSearchPath("src/")
+    display.addSpriteFrames("image/role.plist", "image/role.pvr.ccz");
+    display.addSpriteFrames("image/ui.plist", "image/ui.pvr.ccz");
+    display.addSpriteFrames("image/effect.plist", "image/effect.pvr.ccz");
     self:enterScene("MainScene")
 end
 
