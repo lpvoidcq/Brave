@@ -1,5 +1,6 @@
 import("..roles.Player")
 import("..roles.Enemy1")
+import("..ui.Progress")
 local MainScene = class("MainScene", function()
     return display.newScene("MainScene")
 end)
@@ -15,6 +16,10 @@ function MainScene:ctor()
     self.enemy = Enemy1.new()
     self.enemy:setPosition(display.right - self.enemy:getContentSize().width/2, display.cy)
     self:addChild(self.enemy)
+    
+    self.progress = Progress.new("#player-progress-bg.png", "#player-progress-fill.png")
+    self.progress:setPosition(display.left + self.progress:getContentSize().width/2, display.top - self.progress:getContentSize().height/2)
+    self:addChild(self.progress)
     
     self:addTouchLayer()
 --[[    cc.ui.UILabel.new({
